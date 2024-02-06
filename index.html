@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G.M.Andreevich.9e</title>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        font-family: 'Comic Sans MS';
+    }
+    body{
+       background-color: rgb(39, 39, 39);
+    }
+    #text1{
+        color: rgb(255, 255, 255);
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3px;
+
+    }
+    .textarea{
+        display: flex;
+        margin: 30px;
+        background-color:rgb(23, 22, 22);
+        box-shadow: 7px 7px 10px rgb(16, 15, 15);
+        height: 200px;
+        flex-direction:column;
+        border-radius: 20px;
+
+    }
+    textarea{
+        background-color: rgb(255, 255, 255);
+        box-shadow: 1px 1px 7px white;
+        width: 400px;
+        max-width: 450px;
+        height: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+    }
+    button{
+        box-shadow: 1px 1px 7px white;
+        height: 40px;
+        width: 200px;
+        margin: auto;
+        border-radius: 10px;
+    }
+    button:active{
+        background-color:rgb(184, 184, 184);
+    }
+    img{
+        width: 75px;
+        height: 75px;
+        margin: auto;
+        border-radius: 25%;
+        box-shadow:2px 2px 7px darkgreen;
+    }
+    .img{
+        display: flex;
+        margin: 20px;
+        background-color:rgb(23, 22, 22);
+        box-shadow: 7px 7px 10px (16, 15, 15);
+        height: 150px;
+        color: rgb(5, 76, 5);
+        text-shadow: 1px 1px 7px;
+        flex-direction: column;
+        border-radius: 20px;
+    }
+    .fr{
+        margin: auto;
+
+    }
+    #input{
+        margin: auto;
+       height:65px;
+       width: 450px;
+       background-color: white;
+       box-shadow: 2px 2px 7px darkgreen;
+       border-radius: 15px;
+       margin-bottom: 20px;
+    }
+    #output{
+        margin: auto;
+       height:65px;
+       width: 450px;
+       background-color: white;
+       box-shadow: 2px 2px 7px darkgreen;
+       border-radius: 15px;
+       margin-bottom: 20px;
+    }
+
+</style>
+</head>
+<body>
+    <div class="textarea" id="inin">
+        <div id="text1">засшифр:</div>
+        <textarea id="in">введите текст:</textarea>
+        <button id="buttonr" onclick="shif()">зашифровать</button>
+        <div id="text1">получите шифр:</div>
+        <div id="output"></div>
+    </div>
+    <div class="textarea" id="outout">
+        <div id="text1">расшифр:</div>
+        <textarea id="out">введите шифр:</textarea>
+        <button id="buttonr" onclick="unshif()">расшифровать</button>
+        <div id="text1">получите текст:</div>
+        <div id="input"></div>
+    </div>
+    <div class="img">
+        <div class="fr">
+            ~Refresher~
+        </div>
+        <img src="https://yandex-images.clstorage.net/55n0hQS99/855373IIBNg5/RhUR44wSfNiM_07TPL5_mLZ0Jjmj620iL5y9g2KgsS5IL3Nq8xS9sCxX1SpwBfEqOU8MSFNfhVnXe6vWuZGpCRcR1Vc9t4kMnUoOUwzuXk1iRTf8A668hgpZ7ONX0EQODkzUKMESGsZ7lYK4pIC0X1krjYznWUONwdiu1h9W-PpkdCNj69PvCCqN3uEfrR-8ROYlXRINnvMIan7ll5XAic6dRsnxE8hlK0SBKwfzpA1JiPgchCkSq1DJbMf_tPoLh-dj4hiS7viY_e7jTq0dHnT216wxHf_yu-pddvd3g5nerzR70FCYFUk1AqkkAgRMCxlJ7NcKomqjyv8GX6Wr2AXWQcJKcE0L-K1_4Ow87yym1jQvMQ4v4uob3KaVZIBLvq5mmLGjWUcKZ-Fr5AH0PVnKOn2GiFNb8gqORdyGOzm0dEDiCJGP-TtvTnEdXOzPJlXV7hIeHWCpSE63xnbCWp9NRipycZsU2bVwaGQyBu1bCFufBakR2yAq3uR-ZcgZFvXw8EjCX5oo3_2TPo6tbHa0pG0DTfzhSFpf1gY2EiocPXcYQJMo1anEsRo2YsSdm-roTTSZsWhBmy7HXgW5K-R3sEI70S3ZST2e4a29fA9XFRZdIg7vYIjb_ZWEtcIrbj9m6EIj-tdptmMItGKEX9lrSU30qdH5Y_t-959WG6r3JeAxuMBv-ihsP6GNbu6sxASH_aFs3JDY2E3ENDYxKL391kpDwKh0W9dCOCSBxNw7CZrM5nhC6wJqnQZtppm7hUYy07oAH5lavd-RPf0vjQak5j2BDg-AWUndFtUkMcoMnLYoQJHJVbmG84g3A4U-Wbua7SZp0Knzi-12jfZZ-Wd3s-OLwSyIml5sMF5s7Y6GBwZvcF8_YokKHRQ0JhF7ry-3mBIQukb5xOMaN8CWjEo62Q9HCnP5QLnMpN5Hu9plRxDiOeONu5osfuJcbo08JccH_CNvzCFauc7mM" 
+        onclick="refresh()">
+    </div>
+    <script>
+        
+        var a = '';
+        var message = "";
+        var shifer = "";
+        const alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяабв .,!?-+";
+        const alphabet2 = "эюяабвгдеёжзийклмнопрстуфхцчшщъыьэюя .,!?-+";
+        // textarea!!!  in!
+           document.getElementById('in').oninput = function(){
+                message = this.value;
+           }
+        // textarea!!! in!
+        // textarea!!! out!
+        document.getElementById('out').oninput = function(){
+                shifer = this.value;
+           }
+        // textarea!!! out!
+
+        // shifer!!!
+        function shif(){ 
+            
+            for(let i=0;i<message.length;i++){
+               switch (message[i]) {
+                case 'а':
+                    a = 1
+                    break;
+
+                case 'б':
+                    a = 2
+                    break;
+
+                case 'в':
+                    a = 3
+                    break;
+
+                case 'г':
+                    a = 4
+                    break;
+
+                case 'д':
+                    a = 5
+                    break;
+
+                case 'е':
+                    a = 6
+                    break;
+
+                case 'ё':
+                    a = 7
+                    break;
+
+                case 'ж':
+                    a = 8
+                    break;
+
+                case 'з':
+                    a = 9
+                    break;
+
+                case 'и':
+                    a = 10
+                    break;
+
+                case 'й':
+                    a = 11
+                    break;
+
+                case 'к':
+                    a = 12
+                    break;
+
+                case 'л':
+                    a = 13
+                    break;
+
+                case 'м':
+                    a = 14
+                    break;
+
+                case 'н':
+                    a = 15
+                    break;
+
+                case 'о':
+                    a = 16
+                    break;
+
+                case 'п':
+                    a = 17
+                    break;
+
+                case 'р':
+                    a = 18
+                    break;
+
+                case 'с':
+                    a = 19
+                    break;
+
+                case 'т':
+                    a = 20
+                    break;
+
+                case 'у':
+                    a = 21
+                    break;
+
+                case 'ф':
+                    a = 22
+                    break;
+
+                case 'х':
+                    a = 23
+                    break;
+
+                case 'ц':
+                    a = 24
+                    break;
+
+                case 'ч':
+                    a = 25
+                    break;
+
+                case 'ш':
+                    a = 26
+                    break;
+
+                case 'щ':
+                    a = 27
+                    break;
+
+                case 'ъ':
+                    a = 28
+                    break;
+
+                case 'ы':
+                    a = 29
+                    break;
+
+                case 'ь':
+                    a = 30
+                    break;
+
+                case 'э':
+                    a = 31
+                    break;
+
+                case 'ю':
+                    a = 32
+                    break;
+
+                case 'я':
+                    a = 33
+                    break;
+
+                case ' ':
+                    a = 34
+                    break;
+
+                case '.':
+                    a = 35
+                    break;
+
+                case ',':
+                    a = 36
+                    break;
+
+                case '!':
+                    a = 37
+                    break;
+
+                case '?':
+                    a = 38
+                    break;
+
+                case '-':
+                    a = 39
+                    break;
+
+                case '+':
+                    a = 40
+                    break;
+               }
+               console.log(a)
+               document.getElementById('output').textContent += alphabet.charAt(a+2);
+            }
+            
+        }
+        //shifer!!!
+
+        //unshifer!!!
+        function unshif(){ 
+            for(let i=0;i<shifer.length;i++){
+               switch (shifer[i]) {
+
+                case 'а':
+                    a = 4
+                    break;
+
+                case 'б':
+                    a = 5
+                    break;
+
+                case 'в':
+                    a = 6
+                    break;
+
+                case 'г':
+                    a = 7
+                    break;
+
+                case 'д':
+                    a = 8
+                    break;
+
+                case 'е':
+                    a = 9
+                    break;
+
+                case 'ё':
+                    a = 10
+                    break;
+
+                case 'ж':
+                    a = 11
+                    break;
+
+                case 'з':
+                    a = 12
+                    break;
+
+                case 'и':
+                    a = 13
+                    break;
+
+                case 'й':
+                    a = 14
+                    break;
+
+                case 'к':
+                    a = 15
+                    break;
+
+                case 'л':
+                    a = 16
+                    break;
+
+                case 'м':
+                    a = 17
+                    break;
+
+                case 'н':
+                    a = 18
+                    break;
+
+                case 'о':
+                    a = 19
+                    break;
+
+                case 'п':
+                    a = 20
+                    break;
+
+                case 'р':
+                    a = 21
+                    break;
+
+                case 'с':
+                    a = 22
+                    break;
+
+                case 'т':
+                    a = 23
+                    break;
+
+                case 'у':
+                    a = 24
+                    break;
+
+                case 'ф':
+                    a = 25
+                    break;
+
+                case 'х':
+                    a = 26
+                    break;
+
+                case 'ц':
+                    a = 27
+                    break;
+
+                case 'ч':
+                    a = 28
+                    break;
+
+                case 'ш':
+                    a = 29
+                    break;
+
+                case 'щ':
+                    a = 30
+                    break;
+
+                case 'ъ':
+                    a = 31
+                    break;
+
+                case 'ы':
+                    a = 32
+                    break;
+
+                case 'ь':
+                    a = 33
+                    break;
+
+                case 'э':
+                    a = 34
+                    break;
+
+                case 'ю':
+                    a = 35
+                    break;
+
+                case 'я':
+                    a = 36
+                    break;
+
+                case ' ':
+                    a = 40
+                    break;
+
+                case '.':
+                    a = 41
+                    break;
+
+                case ',':
+                    a = 42
+                    break;
+
+                case '!':
+                    a = 43
+                    break;
+
+                case '?':
+                    a = 44
+                    break;
+
+                case '-':
+                    a = 45
+                    break;
+
+                case '+':
+                    a = 46
+                    break;
+               }
+               document.getElementById('input').textContent += alphabet2.charAt(a - 4);
+            }
+            
+        }
+        //unshifer!!!
+
+        // refresh!!
+        function refresh(){
+          document.getElementById('input').innerHTML = null;
+          document.getElementById('output').innerHTML = null;
+        }
+        // refresh!!
+        
+    </script>
+</body>
+</html>
