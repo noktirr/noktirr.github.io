@@ -47,15 +47,11 @@
         margin: auto;
         border-radius: 10px;
     }
+    button:hover{
+        background-color: rgb(204, 204, 204);
+    }
     button:active{
         background-color:rgb(184, 184, 184);
-    }
-    img{
-        width: 75px;
-        height: 75px;
-        margin: auto;
-        border-radius: 25%;
-        box-shadow:2px 2px 7px darkgreen;
     }
     .img{
         display: flex;
@@ -68,8 +64,22 @@
         flex-direction: column;
         border-radius: 20px;
     }
+    .fr:hover{
+        background-color: rgb(193, 193, 193);
+    }
+    .fr:active{
+        background-color: rgb(141, 141, 141);
+    }
     .fr{
+        display: flex;
         margin: auto;
+        width: 75px;
+        height: 75px;
+        margin: auto;
+        border-radius: 50%;
+        box-shadow:2px 2px 7px darkgreen;
+        background-color: rgb(221, 221, 221);
+
 
     }
     #input{
@@ -90,10 +100,20 @@
        border-radius: 15px;
        margin-bottom: 20px;
     }
+    .podpis{
+        background-color: rgb(255, 255, 255);
+    }
+    #txt{
+        margin: auto;
+        padding: auto;
+    }
 
 </style>
 </head>
 <body>
+    <div class="podpis">
+        <div> Продукт итогового проекта. Выполнил Гордузов Матвей Андреевич 9"Е" класс МАОУ СОШ№15</div>
+    </div>
     <div class="textarea" id="inin">
         <div id="text1">поле для сообщения:</div>
         <textarea id="in">введите текст:</textarea>
@@ -109,11 +129,8 @@
         <div id="input"></div>
     </div>
     <div class="img">
-        <div class="fr">
-            ~очистить итоговые поля~
+        <div class="fr"><div id="txt">очистить</div>
         </div>
-        <img src="https://yandex-images.clstorage.net/55n0hQS99/855373IIBNg5/RhUR44wSfNiM_07TPL5_mLZ0Jjmj620iL5y9g2KgsS5IL3Nq8xS9sCxX1SpwBfEqOU8MSFNfhVnXe6vWuZGpCRcR1Vc9t4kMnUoOUwzuXk1iRTf8A668hgpZ7ONX0EQODkzUKMESGsZ7lYK4pIC0X1krjYznWUONwdiu1h9W-PpkdCNj69PvCCqN3uEfrR-8ROYlXRINnvMIan7ll5XAic6dRsnxE8hlK0SBKwfzpA1JiPgchCkSq1DJbMf_tPoLh-dj4hiS7viY_e7jTq0dHnT216wxHf_yu-pddvd3g5nerzR70FCYFUk1AqkkAgRMCxlJ7NcKomqjyv8GX6Wr2AXWQcJKcE0L-K1_4Ow87yym1jQvMQ4v4uob3KaVZIBLvq5mmLGjWUcKZ-Fr5AH0PVnKOn2GiFNb8gqORdyGOzm0dEDiCJGP-TtvTnEdXOzPJlXV7hIeHWCpSE63xnbCWp9NRipycZsU2bVwaGQyBu1bCFufBakR2yAq3uR-ZcgZFvXw8EjCX5oo3_2TPo6tbHa0pG0DTfzhSFpf1gY2EiocPXcYQJMo1anEsRo2YsSdm-roTTSZsWhBmy7HXgW5K-R3sEI70S3ZST2e4a29fA9XFRZdIg7vYIjb_ZWEtcIrbj9m6EIj-tdptmMItGKEX9lrSU30qdH5Y_t-959WG6r3JeAxuMBv-ihsP6GNbu6sxASH_aFs3JDY2E3ENDYxKL391kpDwKh0W9dCOCSBxNw7CZrM5nhC6wJqnQZtppm7hUYy07oAH5lavd-RPf0vjQak5j2BDg-AWUndFtUkMcoMnLYoQJHJVbmG84g3A4U-Wbua7SZp0Knzi-12jfZZ-Wd3s-OLwSyIml5sMF5s7Y6GBwZvcF8_YokKHRQ0JhF7ry-3mBIQukb5xOMaN8CWjEo62Q9HCnP5QLnMpN5Hu9plRxDiOeONu5osfuJcbo08JccH_CNvzCFauc7mM" 
-        onclick="refresh()">
     </div>
     <script>
         
@@ -298,10 +315,8 @@
                     a = 40
                     break;
                }
-               console.log(a)
                document.getElementById('output').textContent += alphabet.charAt(a+2);
-            }
-            
+            }   
         }
         //shifer!!!
 
